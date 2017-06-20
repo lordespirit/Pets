@@ -1,0 +1,83 @@
+package test;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import main.Ave;
+import main.Canido;
+import main.Felino;
+import main.ListaMascotas;
+import main.Roedor;
+
+
+public class testMascotas {
+	
+	
+	//@Test
+	public void testListaMascotas(){
+		
+		ListaMascotas list = new ListaMascotas();  
+		
+		list.add(new Canido("Firulais", 40, 0.50f,0.50f));
+		list.add(new Felino("Garffiel", 20, 0.20f,0.30f));
+		list.add(new Ave("Parro", 0.5f, 0.10f,0.15f));
+		list.add(new Ave("Miki", 0.2f, 0.5f,0.1f));
+		
+		// Error porque no extiende de Mascota 
+		// list.add(new Zapato());
+		Assert.assertNotNull(list.get(0));
+		Assert.assertNotNull(list.get(1));
+		Assert.assertNotNull(list.get(2));
+		Assert.assertNotNull(list.get(3));
+
+		for(int i=0; i< list.size(); i++)
+		      System.out.println("\nMascota: " 
+		    		  	+ list.get(i).getNombre() 
+		    		  	+ "\nEstado Nutricion:" + list.get(i).getStadoNutricion()
+		    		  	+ "\nPeso Racion comida: " + list.get(i).getPesoRacion());  
+				
+	}
+	
+	
+
+	@Test
+	public void testListaMascotas2(){
+		
+		ListaMascotas list = new ListaMascotas();  
+		
+		
+		// Error porque no extiende de Mascota 
+		// list.add(new Zapato());
+		list.add(new Canido("Firulais", 40, 0.50f,0.50f));
+		list.add(new Felino("Garffiel", 20, 0.20f,0.30f));
+		list.add(new Ave("Parro", 0.5f, 0.10f,0.15f));
+		list.add(new Roedor("Miki", 0.2f, 0.5f,0.1f));
+
+
+
+		for(int i=0; i< list.size(); i++){
+			if(list.get(i).getClass().isAssignableFrom(Canido.class)) {
+				Canido  canido = (Canido) list.get(i);
+				System.out.println("\nMascota: " 
+		    		  	+  canido.getNombre() 
+		    		  	+ "\nCalidad colmillos:" +  canido.getCalidaColmillo()); 
+			}else if(list.get(i).getClass().isAssignableFrom(Felino.class)) {
+				Felino  canido = (Felino) list.get(i);
+				System.out.println("\nMascota: " 
+		    		  	+  canido.getNombre() 
+		    		  	+ "\nCalidad colmillos:" +  canido.getCalidadGarras());
+			}else{
+				 System.out.println("\nMascota: " 
+			    		  	+ list.get(i).getNombre() 
+			    		  	+ "\nEstado Nutricion:"  
+			    		  	+ "\nPeso Racion comida: " + list.get(i).getPesoRacion()); 
+			}
+		}
+		       
+		
+	}
+	
+	
+	
+
+}
