@@ -62,5 +62,20 @@ public class ListaMascotas {
 		return arrayMascotas.length;
 	}
 	
+	
+	/**
+	 *   
+	 *  
+	 * @param name
+	 * @return
+	 */
+	public Mascota[] findByOwnerName(String name){
+		return arrayMascotas;
+		
+	}
+
+    public Mascota[] findByOwnerEmail(String email){
+		return arrayMascotas; 
+	}
 
 }

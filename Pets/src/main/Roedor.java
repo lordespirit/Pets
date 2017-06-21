@@ -9,7 +9,9 @@ public class Roedor extends Mascota{
 		this.calidadPelaje = 1;
 	}
 	
-	
+	public Roedor(){
+		super(); 
+	}
 
 	@Override
 	public float getStadoNutricion() { 
@@ -23,10 +25,7 @@ public class Roedor extends Mascota{
 		return 0.15f*getPeso()*(2f-calidadPelaje);
 	}
 	
-	
-	
-	
-	
+
 	public float getCalidadPelaje() {
 		return calidadPelaje;
 	}

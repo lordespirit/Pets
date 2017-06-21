@@ -14,12 +14,18 @@ package main;
  */
 public abstract  class Mascota { 
 	
+	private Person propietario; 
+	
 	private String nombre; 
 	private float peso; 
 	private float altura; 
 	private float largo;
 	
 
+	public Mascota(){
+		
+	}
+	
 	public Mascota(String nombre,float peso, float altura, float largo){
 		this.setNombre(nombre);
 		this.peso = peso; 
@@ -85,6 +91,14 @@ public abstract  class Mascota {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Person getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Person propietario) {
+		this.propietario = propietario;
 	}
 
 

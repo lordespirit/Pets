@@ -3,9 +3,7 @@ package main;
 public class Canido extends Mascota{
 
 	private float calidaColmillo; 
-	
-	
-	
+
 
 	public Canido(String nombre,float peso, float altura, float largo){
 		super(nombre,peso,altura, largo);
@@ -13,8 +11,8 @@ public class Canido extends Mascota{
 	}
 	
 	
-	public Canido(String nombre){
-		super(nombre); 
+	public Canido(){
+		super(); 
 	}
 	
 

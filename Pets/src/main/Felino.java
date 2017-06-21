@@ -8,8 +8,12 @@ public class Felino extends Mascota{
 		this.calidadGarras = 1;
 	
 	}
-
 	
+	public Felino() { 
+		super(); 
+	}
+
+
 	public float getCalidadGarras() {
 		return calidadGarras;
 	}

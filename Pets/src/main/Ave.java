@@ -9,7 +9,10 @@ public class Ave extends Mascota {
 		this.setCalidadPlumas(1); 
 	}
 	
-
+	public Ave(){
+		super(); 
+	}
+	
 	@Override
 	public float getStadoNutricion() {
 		// Peso/(0.5*altura * largo)
@@ -30,5 +33,7 @@ public class Ave extends Mascota {
 	public void setCalidadPlumas(float calidadPlumas) {
 		this.calidadPlumas = calidadPlumas;
 	}
+	
+	
 
 }
