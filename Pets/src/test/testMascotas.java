@@ -73,6 +73,9 @@ public class testMascotas {
 			    		  	+ "\nPeso Racion comida: " + list.get(i).getPesoRacion()); 
 			}
 		}
+		
+		
+		//Assert.assertEquals(expected, actual, 0.4f); 
 		       
 		
 	}
