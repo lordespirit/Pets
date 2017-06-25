@@ -2,38 +2,36 @@ package main;
 
 public class Ave extends Mascota {
 	
-	private float calidadPlumas; 
-
-	public Ave(String nombre, float peso, float altura, float largo) {
+	private float calidadPlumas;
+	/*
+	// Llamada al método constructor del padre - #1
+	public Aves(String nombre){
+		super(nombre);
+	}
+	*/
+		
+	// Llamada al método constructor del padre - #2
+	public Ave(String nombre, float peso, float altura, float largo){
 		super(nombre, peso, altura, largo);
-		this.setCalidadPlumas(1); 
+		this.calidadPlumas = 1;
 	}
-	
-	public Ave(){
-		super(); 
-	}
-	
-	@Override
-	public float getStadoNutricion() {
-		// Peso/(0.5*altura * largo)
-		return  getPeso()/(0.5f*getAltura()*getLargo());
-	}
-	
+
 	@Override
 	public float getPesoRacion() {
-		return 0.2f*getPeso()*(2f-calidadPlumas); 
+		return 0.1f*getPeso()*(2f-calidadPlumas);
 	}
-
+	
+	@Override
+	public float getEstadoNutricion(){
+		return getPeso()/((0.5f*getAltura())*getLargo());
+	}
 
 	public float getCalidadPlumas() {
 		return calidadPlumas;
 	}
 
-
 	public void setCalidadPlumas(float calidadPlumas) {
 		this.calidadPlumas = calidadPlumas;
 	}
-	
-	
 
 }

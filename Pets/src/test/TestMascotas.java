@@ -34,7 +34,7 @@ public class TestMascotas {
 		for(int i=0; i< list.size(); i++)
 		      System.out.println("\nMascota: " 
 		    		  	+ list.get(i).getNombre() 
-		    		  	+ "\nEstado Nutricion:" + list.get(i).getStadoNutricion()
+		    		  	+ "\nEstado Nutricion:" + list.get(i).getEstadoNutricion()
 		    		  	+ "\nPeso Racion comida: " + list.get(i).getPesoRacion());  
 				
 	}
@@ -61,7 +61,7 @@ public class TestMascotas {
 				Canido  canido = (Canido) list.get(i);
 				System.out.println("\nMascota: " 
 		    		  	+  canido.getNombre() 
-		    		  	+ "\nCalidad colmillos:" +  canido.getCalidaColmillo()); 
+		    		  	+ "\nCalidad colmillos:" +  canido.getCalidadColmillo()); 
 			}else if(list.get(i).getClass().isAssignableFrom(Felino.class)) {
 				Felino  canido = (Felino) list.get(i);
 				System.out.println("\nMascota: " 
@@ -109,7 +109,7 @@ public class TestMascotas {
 			for(int i=0; i< list.size(); i++)
 			      System.out.println("\nMascota: " 
 			    		  	+ list.get(i).getNombre() 
-			    		  	+ "\nEstado Nutricion:" + list.get(i).getStadoNutricion()
+			    		  	+ "\nEstado Nutricion:" + list.get(i).getEstadoNutricion()
 			    		  	+ "\nPeso Racion comida: " + list.get(i).getPesoRacion());  
 					
 		}

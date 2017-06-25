@@ -1,30 +1,23 @@
 package main;
 
-public class Roedor extends Mascota{
-	private float calidadPelaje; 
+public class Roedor extends Mascota {
 
-
+	private float calidadPelaje;
+	
 	public Roedor(String nombre, float peso, float altura, float largo) {
 		super(nombre, peso, altura, largo);
 		this.calidadPelaje = 1;
 	}
-	
-	public Roedor(){
-		super(); 
-	}
 
 	@Override
-	public float getStadoNutricion() { 
-		// Peso/(altura * largo)
-		return  getPeso()/(0.3f*getAltura()*getLargo()); 
+	public float getPesoRacion() {
+		return 0.1f*getPeso()*(2f-calidadPelaje);
 	}
 	
 	@Override
-	public float getPesoRacion() {
-		//0.1*Peso*(2-CalidaGarras)
-		return 0.15f*getPeso()*(2f-calidadPelaje);
+	public float getEstadoNutricion(){
+		return getPeso()/((0.3f*getAltura())*getLargo());
 	}
-	
 
 	public float getCalidadPelaje() {
 		return calidadPelaje;
@@ -33,6 +26,4 @@ public class Roedor extends Mascota{
 	public void setCalidadPelaje(float calidadPelaje) {
 		this.calidadPelaje = calidadPelaje;
 	}
-	
-
 }

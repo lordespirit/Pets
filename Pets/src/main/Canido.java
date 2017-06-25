@@ -1,52 +1,46 @@
 package main;
 
-public class Canido extends Mascota{
+public class Canido extends Mascota {
 
-	private float calidaColmillo; 
-
-
-	public Canido(String nombre,float peso, float altura, float largo){
-		super(nombre,peso,altura, largo);
-		this.calidaColmillo =1; 
+	private float calidadColmillo;
+	
+	/*
+	// Llamada al método constructor del padre - #1
+	public Canidos(String nombre){
+		super(nombre);
+	}
+	*/
+	
+	// Llamada al método constructor del padre - #2
+	public Canido(String nombre, float peso, float altura, float largo){
+		super(nombre, peso, altura, largo);
+		this.calidadColmillo = 1;
 	}
 	
-	
-	public Canido(){
-		super(); 
-	}
-	
-
+	// Métodos sobreescritos
 	@Override
-	public float getStadoNutricion() { 
-		// Peso/(altura * largo)
-		return  getPeso()/(getAltura()*getLargo()); 
+	public float getEstadoNutricion(){
+		return getPeso()/(getAltura()*getLargo());
 	}
-	
+	 
 	@Override
+	public String toString(){
+		return "Esto es un perro";
+	}
+
+	@Override // definir metodo abstracto de herencia
 	public float getPesoRacion() {
-		// 0.3*Peso*(2-CalidaColmillos)
-		return 0.3f*getPeso()*(2f-calidaColmillo);
+		return 0.3f*getPeso()*(2f-calidadColmillo);
+	}
+	
+	public float getCalidadColmillo() {
+		return calidadColmillo;
 	}
 
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "Esto es un perro"; 
-	}
-
-	public float getCalidaColmillo() {
-		return calidaColmillo;
+	public void setCalidadColmillo(float calidadColmillo) {
+		this.calidadColmillo = calidadColmillo;
 	}
 
 
-	public void setCalidaColmillo(float calidaColmillo) {
-		this.calidaColmillo = calidaColmillo;
-	}
-
-	
-	
-	
-	
-	
 }
