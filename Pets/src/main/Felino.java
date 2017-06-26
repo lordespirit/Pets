@@ -4,14 +4,7 @@ public class Felino extends Mascota {
 
 	private float calidadGarras;
 	
-	/*
-	// Llamada al método constructor del padre - #1
-	public Felinos(String nombre) {
-		super(nombre);
-	}
-	*/
-	
-	// Llamada al método constructor del padre - #2
+	// Llamada al método constructor del padre
 	public Felino(String nombre, float peso, float altura, float largo){
 		super(nombre, peso, altura, largo);
 		this.calidadGarras = 1;

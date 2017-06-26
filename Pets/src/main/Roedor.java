@@ -4,6 +4,7 @@ public class Roedor extends Mascota {
 
 	private float calidadPelaje;
 	
+	// Llamada al método constructor del padre
 	public Roedor(String nombre, float peso, float altura, float largo) {
 		super(nombre, peso, altura, largo);
 		this.calidadPelaje = 1;

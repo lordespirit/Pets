@@ -3,14 +3,8 @@ package main;
 public class Ave extends Mascota {
 	
 	private float calidadPlumas;
-	/*
-	// Llamada al método constructor del padre - #1
-	public Aves(String nombre){
-		super(nombre);
-	}
-	*/
-		
-	// Llamada al método constructor del padre - #2
+			
+	// Llamada al método constructor del padre
 	public Ave(String nombre, float peso, float altura, float largo){
 		super(nombre, peso, altura, largo);
 		this.calidadPlumas = 1;
