@@ -45,9 +45,9 @@ public class TestDataFile {
 		
 		//Propietarios 
 		Person propieCan = new Person("Fredy Campino;0034656000000;fredy@poo.com;Calle Campino"); 
-		Person propieFelino = new Person("Alex  Guix;0034656000001; jordi@poo.com;Calle Guix");
+		Person propieFelino = new Person("Alex Guix;0034656000001; jordi@poo.com;Calle Guix");
 		Person propieParrot = new Person("Josep Cardona;0034656000002;josep@poo.com;Calle Cardona");
-		Person propieMiki = new Person("Marc  Font;0034656000003;marc@poo.com;Calle font");
+		Person propieMiki = new Person("Marc Font;0034656000003;marc@poo.com;Calle font");
 				
 		// iniciar el propietario a cada mascota
 		can.setPropietario(propieCan);
@@ -55,7 +55,29 @@ public class TestDataFile {
 		parrot.setPropietario(propieParrot); 	
 		miki.setPropietario(propieMiki); 
 		
+		// DOS FORMAS DE COMPROBAR -  NUM1 - COMPARANDO CON EL NOMBRE CONOCIDO
+		Assert.assertEquals(can.getNombre(),"Firulais");
+		Assert.assertEquals(can.getAltura(), 0.5,0.01);
+		Assert.assertEquals(can.getPeso(), 40,0.1);
+		Assert.assertEquals(can.getPropietario().getFullName(), "Fredy Campino");
 		
+		Assert.assertEquals(felino.getNombre(),"Garffiel");
+		Assert.assertEquals(felino.getAltura(), 0.20,0.01);
+		Assert.assertEquals(felino.getPeso(), 20,0.1);
+		Assert.assertEquals(felino.getPropietario().getFullName(), "Alex Guix");
+		
+		Assert.assertEquals(parrot.getNombre(),"Parro");
+		Assert.assertEquals(parrot.getAltura(), 0.10,0.01);
+		Assert.assertEquals(parrot.getPeso(), 0.5,0.1);
+		Assert.assertEquals(parrot.getPropietario().getFullName(), "Josep Cardona");
+		
+		Assert.assertEquals(miki.getNombre(),"Miki");
+		Assert.assertEquals(miki.getAltura(), 0.5,0.01);
+		Assert.assertEquals(miki.getPeso(), 0.2,0.1);
+		Assert.assertEquals(miki.getPropietario().getFullName(), "Marc Font");
+		
+		
+		// DOS FORMAS DE COMPROBAR -  NUM2 - GENERANDO UNA NUEVA LISTA
 		Assert.assertEquals(can.getNombre(), list.get(0).getNombre());
 		Assert.assertEquals(can.getAltura(), list.get(0).getAltura(),0.01);
 		Assert.assertEquals(can.getPeso(), list.get(0).getPeso(),0.01);
@@ -92,9 +114,9 @@ public class TestDataFile {
 		
 		//Propietarios 
 		Person propieCan = new Person("Fredy Campino;0034656000000;fredy@poo.com;Calle Campino"); 
-		Person propieFelino = new Person("Alex  Guix;0034656000001; jordi@poo.com;Calle Guix");
+		Person propieFelino = new Person("Alex Guix;0034656000001; jordi@poo.com;Calle Guix");
 		Person propieParrot = new Person("Josep Cardona;0034656000002;josep@poo.com;Calle Cardona");
-		Person propieMiki = new Person("Marc  Font;0034656000003;marc@poo.com;Calle font");
+		Person propieMiki = new Person("Marc Font;0034656000003;marc@poo.com;Calle font");
 		
 		// iniciar el propietario a cada mascota
 		can.setPropietario(propieCan);
