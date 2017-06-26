@@ -8,20 +8,20 @@ package main;
  *
  */
 public abstract class Mascota {
-
+	
+	final public String typeClass; 
 	private Person propietario;
 	private String nombre;
 	private float peso;
 	private float altura;
 	private float largo;
 	
-	/*
-	public Mascota(String nombre){
-		this.nombre = nombre;
+	public Mascota(){
+		typeClass= getTypeClass(); 
 	}
-	*/
 	
 	public Mascota(String nombre, float peso, float altura, float largo){
+		typeClass= getTypeClass(); 
 		this.nombre = nombre;
 		this.peso = peso;
 		this.altura = altura;
@@ -85,6 +85,14 @@ public abstract class Mascota {
 	public void setPropietario(Person propietario) {
 		this.propietario = propietario;
 	}
+
+	/**
+	 * Metodo que debe retornar el nombre de la clase, 
+	 * Use getClass().getName();  debe definirse en todos los objetos que extienden de
+	 * Mascota
+	 * @return
+	 */
+	protected abstract String getTypeClass();  
 		
 }
 

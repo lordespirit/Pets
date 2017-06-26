@@ -23,10 +23,6 @@ public class Canido extends Mascota {
 		return getPeso()/(getAltura()*getLargo());
 	}
 	 
-	@Override
-	public String toString(){
-		return "Esto es un perro";
-	}
 
 	@Override // definir metodo abstracto de herencia
 	public float getPesoRacion() {
@@ -42,5 +38,13 @@ public class Canido extends Mascota {
 		this.calidadColmillo = calidadColmillo;
 	}
 
-
+	@Override
+	protected String getTypeClass() {
+		return getClass().getName();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " tipo Canido"; 
+	}
 }

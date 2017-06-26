@@ -34,5 +34,14 @@ public class Felino extends Mascota {
 	public void setCalidadGarras(float calidadGarras) {
 		this.calidadGarras = calidadGarras;
 	}
-
+	
+	@Override
+	protected String getTypeClass() {
+		return getClass().getName();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " tipo Felino"; 
+	}
 }
