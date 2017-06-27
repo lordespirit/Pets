@@ -29,6 +29,16 @@ public abstract class Mascota {
 	}
 	
 	/**
+	 * Metodo que debe retornar el nombre de la clase, 
+	 * Use getClass().getName();  debe definirse en todos los objetos que extienden de
+	 * Mascota
+	 * @return
+	 */
+	
+	protected abstract String getTypeClass();  
+		
+	
+	/**
 	 * Método NO abstracto, también puede ser redefinido con @Override igual que un método abstracto, pero aquí es opcional, en abstracto es obligatorio.
 	 * @return
 	 */
@@ -86,13 +96,5 @@ public abstract class Mascota {
 		this.propietario = propietario;
 	}
 
-	/**
-	 * Metodo que debe retornar el nombre de la clase, 
-	 * Use getClass().getName();  debe definirse en todos los objetos que extienden de
-	 * Mascota
-	 * @return
-	 */
-	protected abstract String getTypeClass();  
-		
 }
 

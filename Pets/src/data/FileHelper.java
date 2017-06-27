@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -72,6 +73,44 @@ public class FileHelper {
 
     }
 	
-	
+	/**
+	 * Lee un archivo y retorna su contenido como un string, 
+	 * si el archivo no existe debe crearlo y escrbir hola mundo.
+	 * "Texto de prueba"
+	 * 
+	 * Utilice la clase String builder
+	 * https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html
+	 * @param aFileName
+	 * @return
+	 */
+	public static String readFileAsString(String aFileName){
+		String str = null;
+		StringBuilder builder = new StringBuilder();
+		
+		try {
+			List<String> list = readSmallTextFile(aFileName);
+			
+			for (String strlist : list) {
+			    if (builder.length() > 0) {
+			        builder.append(" ");
+			    }
+			    builder.append(list);
+			}
+
+			str = builder.toString();
+			
+		} catch (NoSuchFileException e) {
+		    
+			writeFile(new String[0], "texto.txt");
+			
+		} catch (IOException e) {
+			
+			
+			
+		}
+		
+		return str;   
+	}
+
 
 }

@@ -76,6 +76,9 @@ public class ListaMascotas {
 	}	
 	
 	public void remove(int index){
+		
+		checkIndex(index);
+		
 		if(index<0||index>arrayMascotas.length){
 			System.out.println("Índice incorrecto...");
 			return;
@@ -91,6 +94,12 @@ public class ListaMascotas {
 		}
 	}
 	
+	private void checkIndex(int index){
+		if(index>=arrayMascotas.length||index<0){
+			throw new RuntimeException("Error, el indice no existe");
+		}
+	}
+
 	public Mascota[] findByOwnerName(String name){
 		Mascota findNameArrayMascotas[];  
 		int counter = 0;
